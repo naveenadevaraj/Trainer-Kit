@@ -1,0 +1,247 @@
+.user-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Change from min-height to height */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .dashboard-container {
+    height: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1500px;
+    text-align: center;
+  }
+  
+  .dashboard-container h1 {
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .sensors-actuators-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 50px;
+  }
+  
+  .sensor-section,
+.actuator-section {
+  width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 50px;
+  max-height: 500px; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.sensor-section::-webkit-scrollbar,
+.actuator-section::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+  
+  .sensor-section h2,
+  .actuator-section h2 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .status-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .status-table th {
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .status-table td {
+    font-size: 1.3rem;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .status-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+  
+  .status-circle.status-active {
+    background-color: #11bd0e;
+    box-shadow: 0 0 10px  #11bd0e;
+  }
+  
+  .status-circle.status-inactive {
+    background-color: #ce2525;
+    box-shadow: 0 0 10px #ce2525;
+  }
+  
+  .logout-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+
+
+
+  .dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+  
+  .dialog-content {
+    text-align: center;
+  }
+  
+  .dialog-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+  .dialog-content button:hover {
+    background-color: #2563eb;
+  }
+
+  
+
+/* Dark Mode Adjustments */
+body.dark-mode .dialog-box {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .dialog-box p {
+    color: #ddd;
+}
+
+body.dark-mode .close-button {
+    color: #ddd;
+}
+
+body.dark-mode .close-button:hover {
+    color: #ff4d4d;
+}
+
+
+
+
+  /* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+
+  body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  .user-dashboard.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  .dark-mode .dashboard-container {
+    background: rgba(50, 50, 50, 0.7);
+  }
+  
+  .dark-mode .sensor-section,
+  .dark-mode .actuator-section {
+    background: rgba(70, 70, 70, 0.7);
+  }
+  
+  .dark-mode .status-table th {
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+  }
+  
+  .dark-mode .status-table td {
+    color: #e0e0e0;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .theme-toggle-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sensors-actuators-container {
+      flex-direction: column;
+    }
+    
+    .sensor-section,
+    .actuator-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }

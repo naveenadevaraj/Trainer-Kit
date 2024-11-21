@@ -1,0 +1,65 @@
+/* Portal.css */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+
+  }
+  .home-container {
+    width: 100vw; /* Make the container take the full width of the viewport */
+    height:700px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Dark green background */ display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .home-title {
+    margin-top: 200px;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .home-description {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+  
+  .portal-image {
+    margin-top: 20px;
+    max-height: 500px;
+    width: 100%; /* Make the image take up 100% of its container */
+    max-width: 1200px; /* Limit the image width to a max of 1000px */
+    height: 100%; /* Make the image height adapt to its container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 10px; /* Optional, adds rounded corners to the image */
+  }
+  
+  /* Container for buttons */
+.button-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Horizontal gap between buttons */
+}
+
+.dashboard-btn,
+.manual-btn {
+  padding: 15px 30px;
+  background-color: #F9A825;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dashboard-btn:hover,
+.manual-btn:hover {
+  background-color: #FFB300;
+}
