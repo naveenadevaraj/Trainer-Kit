@@ -6,7 +6,7 @@ import './UserDashboard.css';
 
 const UserDashboard = () => {
   const location = useLocation(); // Access passed state
-  const { userLevel, sensorData } = location.state || {}; // Retrieve userLevel and sensorData from state
+  const {  sensorData } = location.state || {}; // Retrieve userLevel and sensorData from state
   const navigate = useNavigate(); // Initialize navigate function
 
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -41,7 +41,7 @@ const UserDashboard = () => {
     <div className={`user-dashboard ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="dashboard-container">
         <div className="dashboard-header">
-          <h1>{userLevel} User Dashboard</h1>
+          <h1>DASHBOARD</h1>
           <div className="header-buttons">
             <button onClick={toggleDarkMode} className="theme-toggle-button">
               {isDarkMode ? '☀️' : '🌙'}
@@ -101,7 +101,7 @@ const UserDashboard = () => {
         <div className="dialog-overlay">
           <div className="dialog-box">
             <button className="close-button" onClick={handleDialogClose}>✖</button>
-            <h3>{dialogType === 'sensor' ? 'Sensor Details' : 'Actuator Details'}</h3>
+            <h3>{dialogType === 'sensor' ? 'Sensor Details' : 'Actuator Details'}</h3><br/>
             <p>{selectedItem} is currently active.</p><br/>
             <Live /> {/* Render the Live component inside the dialog */}
           </div>

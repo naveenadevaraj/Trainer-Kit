@@ -1,104 +1,184 @@
-/* Reset and base styles */
+/* General reset and styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .live-dashboard {
-    min-height: 50vh;
-    background-color: #1a1f2e;
-    padding: 2rem;
-    color: white;
-  }
-  
-  .live-container {
-    max-width: 100vh;
-    margin: 0 auto;
-  }
-  
-  /* Flex layout for side-by-side components */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.live-dashboard {
+  max-height: 80vh;
+  color: white;
+}
+
+.live-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.card {
+  background-color: #252b3b;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem; /* Added spacing between chart and gauges */
+}
+
+/* Updated Chart Styles */
+.chart-card {
+  width: 100%;
+  height: auto; /* Allow the chart height to be set dynamically */
+}
+
+/* Temperature Gauge and Timestamp Shared Styles */
+.gauge-circle {
+  position: relative;
+  width: 10rem; /* Diameter of the circle */
+  height: 10rem;
+  margin-bottom: 1rem;
+  border-radius: 50%; /* Makes it a perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 6px solid #a855f7; /* Circle border color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-content {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.temperature-label {
+  font-size: 1rem; /* Smaller font size */
+}
+
+.timestamp-card {
+  background-color: #252b3b;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.timestamp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timestamp-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+
+.timestamp-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Set a maximum height */
+  overflow-y: auto;  /* Allow scrolling if content exceeds max-height */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timestamp-item {
+  font-size: 20px;
+  font-weight: 400;
+  color: #e0e0e0;
+  word-wrap: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.timestamp-item:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+/* Adjusted card and layout spacing */
+.card {
+  padding: 1rem; /* Reduce padding inside cards */
+}
+
+.flex-container {
+  gap: 1.5rem; /* Reduce gap between gauges */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .flex-container {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .card {
-    background-color: #252b3b;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-  }
-  
-  /* Adjust widths */
-  .chart-card {
-      width: 800px;
-  }
-  
-  .gauge-card {
-    width: 350px;
-    margin-top: 50px;
-    height: 250px;
-  
-  }
-  
-  /* Historical chart styles */
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .chart-title, .date {
-    font-size: 0.875rem;
-    color: #8b92a5;
-  }
-  
-  .chart-container {
-    height: 16rem;
-  }
-  
-  /* Temperature gauge styles */
-  .temperature-gauge {
-    display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  
-  .gauge-circle {
-    position: relative;
-    width: 12rem; /* Reduced width */
-    height: 12rem; /* Reduced height */
-    margin-bottom: 1rem;
+
+  .gauge-card {
+    margin-bottom: 1rem; /* Add spacing between gauges on smaller screens */
   }
-  
-  .gauge-border {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 4px solid #a855f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+/* Flex layout for temperature gauges and timestamp */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.gauge-card {
+  flex: 1; /* Equal width for both cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timestamp-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timestamp-container {
+  text-align: center;
+}
+
+.timestamp-time {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.timestamp-label {
+  font-size: 1rem;
+  color: #8b92a5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
   }
-  
-  .gauge-content {
-    text-align: center;
+
+  .timestamp-card {
+    width: 100%;
   }
-  
-  .temperature {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .temperature-label {
-    font-size: 0.875rem;
-    color: #8b92a5;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .flex-container {
-      flex-direction: column;
-    }
-  }
+}

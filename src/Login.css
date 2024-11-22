@@ -27,7 +27,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
   
-  .image-container {
+  .loginimage-container {
     width: 50%;
     display: flex;
     align-items: center;
@@ -62,26 +62,26 @@
     font-size: 2rem;
   }
   
-  .input-container {
+  .login-input-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .input-group.left-aligned {
+  .login-input-group.left-aligned {
     width: 90%;
     text-align: left;
     margin-bottom: 20px;
   }
   
-  .input-label {
+  .login-input-label {
     display: block;
     color: white;
     margin-bottom: 8px;
     text-align: left;
   }
   
-  .input-field {
+  .login-input-field {
     width: 100%;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -92,11 +92,11 @@
     text-align: left;
   }
   
-  .input-field::placeholder {
+  .login-input-field::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
   
-  .button-container {
+  .login-button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -125,11 +125,11 @@
       width: 90%;
     }
     
-    .image-container, .login-box {
+    .login-image-container, .login-box {
       width: 100%;
     }
     
-    .image-container {
+    .login-image-container {
       max-height: 300px;
     }
   }

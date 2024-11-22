@@ -7,10 +7,13 @@ import IntermediatePage from './IntermediatePage';
 import AdvancedPage from './AdvancedPage';
 import UserDashboard from './UserDashboard'; // Import UserDashboard
 import './App.css';
+import Cursor from './Cursor';
 
 function App() {
   return (
+    <>
     <Router>
+    <Cursor/>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/basic" element={<BasicPage />} />
@@ -19,6 +22,7 @@ function App() {
         <Route path="/advanced" element={<AdvancedPage />} />
       </Routes>
     </Router>
+    </>
   );
 }
 

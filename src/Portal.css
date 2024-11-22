@@ -1,65 +1,227 @@
-/* Portal.css */
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+/* Dark theme variables */
+:root {
+  --color-background-start: #0F172A;  /* Dark blue start */
+  --color-background-end: #1E1B4B;    /* Deep purple end */
+  --color-primary: #4F46E5;           /* Bright indigo */
+  --color-secondary: #7C3AED;         /* Bright purple */
+  --color-text-light: #E2E8F0;        /* Light gray text */
+  --color-text-muted: #94A3B8;        /* Muted text */
+  --color-card-bg: #1E293B;           /* Slate dark */
+  --color-button-hover: #6366F1;      /* Bright indigo hover */
+  --color-shadow: rgba(0, 0, 0, 0.4);
+}
 
-  }
-  .home-container {
-    width: 100vw; /* Make the container take the full width of the viewport */
-    height:700px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Dark green background */ display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .home-title {
-    margin-top: 200px;
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .home-description {
-    font-size: 18px;
-    margin-top: 40px;
-  }
-  
-  .portal-image {
-    margin-top: 20px;
-    max-height: 500px;
-    width: 100%; /* Make the image take up 100% of its container */
-    max-width: 1200px; /* Limit the image width to a max of 1000px */
-    height: 100%; /* Make the image height adapt to its container */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-    border-radius: 10px; /* Optional, adds rounded corners to the image */
-  }
-  
-  /* Container for buttons */
-.button-container {
-  margin-top: 100px;
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.portal-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--color-background-start), var(--color-background-end));
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content wrapper */
+.portal-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+/* Title styling */
+.portal-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px var(--color-shadow);
+}
+
+/* Subtitle */
+.portal-subtitle {
+  font-size: 1.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 5rem;
+}
+
+/* Button container */
+.portal-button-container {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Horizontal gap between buttons */
+  gap: 3rem;
+  margin: 4rem 0;
 }
 
-.dashboard-btn,
-.manual-btn {
-  padding: 15px 30px;
-  background-color: #F9A825;
-  color: white;
+/* Button styles */
+.portal-button {
+  padding: 1.25rem 4rem;
   border: none;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 1.25rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text-light);
+  background: rgba(79, 70, 229, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(79, 70, 229, 0.4);
 }
 
-.dashboard-btn:hover,
-.manual-btn:hover {
-  background-color: #FFB300;
+.portal-button.primary {
+  background: var(--color-primary);
+}
+
+.portal-button.secondary {
+  background: var(--color-secondary);
+}
+
+.portal-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--color-button-hover);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Floating card */
+.portal-floating-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+  padding: 4rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px var(--color-shadow);
+  margin: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-card-content {
+  line-height: 1.8;
+  font-size: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.portal-floating-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism effect */
+.portal-glass-effect {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .portal-title {
+      font-size: 3rem;
+  }
+
+  .portal-subtitle {
+      font-size: 1.5rem;
+  }
+
+  .portal-button-container {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .portal-floating-card {
+      padding: 2.5rem;
+      margin: 1.5rem;
+  }
+
+  .portal-card-content {
+      font-size: 1.5rem;
+  }
+}
+
+
+
+/* Card button styles */
+.card-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 4rem 0;
+}
+
+.card-button {
+    background: var(--color-card-bg);
+    color: var(--color-text-light);
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 280px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card-button.dashboard {
+    background: linear-gradient(145deg, rgba(79, 70, 229, 0.1), rgba(79, 70, 229, 0.2));
+}
+
+.card-button.manual {
+    background: linear-gradient(145deg, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0.2));
+}
+
+.card-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-button-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}
+
+.card-button-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-buttons-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .card-button {
+        width: 240px;
+        height: 160px;
+    }
+
+    .card-button-text {
+        font-size: 1.5rem;
+    }
 }

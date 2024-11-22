@@ -14,25 +14,24 @@ const Login = () => {
     switch(username.toLowerCase()) {
       case 'basic':
         if (password === 'basic123') {
-          navigate('/basic');
+          navigate('/basic', { state: { userType: 'Basic' } });
           return;
         }
         break;
       case 'intermediate':
         if (password === 'inter123') {
-          navigate('/intermediate');
+          navigate('/intermediate', { state: { userType: 'Intermediate' } });
           return;
         }
         break;
       case 'advanced':
         if (password === 'advanced123') {
-          navigate('/advanced');
+          navigate('/advanced', { state: { userType: 'Advanced' } });
           return;
         }
         break;
       default:
-        // Show error message
-        alert('Invalid username or password');
+        alert('Invalid username or password');    
     }
   };
 
@@ -50,7 +49,7 @@ const Login = () => {
       </video>
       
       <div className="login-wrapper">
-        <div className="image-container">
+        <div className="loginimage-container">
           <img 
             src="/image.png"  
             alt="Login Illustration" 
@@ -62,13 +61,13 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="login-form">
             <h2 className="login-title">Login</h2>
             
-            <div className="input-container">
-              <div className="input-group left-aligned">
-                <label htmlFor="username" className="input-label">Username</label>
+            <div className="login-input-container">
+              <div className="login-input-group left-aligned">
+                <label htmlFor="username" className="login-input-label">Username</label>
                 <input
                   type="text"
                   id="username"
-                  className="input-field"
+                  className="login-input-field"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -76,12 +75,12 @@ const Login = () => {
                 />
               </div>
               
-              <div className="input-group left-aligned">
-                <label htmlFor="password" className="input-label">Password</label>
+              <div className="login-input-group left-aligned">
+                <label htmlFor="password" className="login-input-label">Password</label>
                 <input
                   type="password"
                   id="password"
-                  className="input-field"
+                  className="login-input-field"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -90,7 +89,7 @@ const Login = () => {
               </div>
             </div>
             
-            <div className="button-container">
+            <div className="login-button-container">
               <button type="submit" className="login-button">
                 Sign In
               </button>
